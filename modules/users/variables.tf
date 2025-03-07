@@ -11,3 +11,7 @@ variable "password" {
   type      = string
   sensitive = true
 }
+
+variable "admin_group_name" {
+  type = string
+}

@@ -43,8 +43,9 @@ module "users" {
   source     = "./modules/users"
   depends_on = [module.userPool, module.groups]
   # variables
-  user_pool_id = module.userPool.user_pool_id
-  username     = var.username
-  password     = var.password
+  user_pool_id     = module.userPool.user_pool_id
+  username         = var.username
+  password         = var.password
+  admin_group_name = module.groups.admin_group_name
   # stage_name = "dev"
 }
