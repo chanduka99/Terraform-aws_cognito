@@ -29,5 +29,12 @@ module "appClient" {
   user_pool_id    = module.userPool.user_pool_id
   app_client_name = "testAppClient"
   # stage_name = "dev"
+}
 
+module "groups" {
+  source     = "./modules/groups"
+  depends_on = [module.userPool]
+  # variables
+  user_pool_id = module.userPool.user_pool_id
+  # stage_name = "dev"
 }
