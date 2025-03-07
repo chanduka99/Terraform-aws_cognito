@@ -38,3 +38,13 @@ module "groups" {
   user_pool_id = module.userPool.user_pool_id
   # stage_name = "dev"
 }
+
+module "users" {
+  source     = "./modules/users"
+  depends_on = [module.userPool, module.groups]
+  # variables
+  user_pool_id = module.userPool.user_pool_id
+  username     = var.username
+  password     = var.password
+  # stage_name = "dev"
+}
